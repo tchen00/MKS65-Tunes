@@ -4,5 +4,6 @@
 #include "library.h"
 
 int main(){
+  printf("LINKED LIST TESTS\n====================================\n\n");
   return 0;
 }
