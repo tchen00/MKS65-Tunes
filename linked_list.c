@@ -12,10 +12,11 @@ void print_list(struct song_node * n){
   printf("]\n");
 }
 
-struct song_node * insert_front(struct song_node * n, int k){
+struct song_node * insert_front(struct song_node * n, char *artist, char *name){
   struct song_node *new = malloc(sizeof(struct song_node));
-  new -> i = k;
-  new -> next = n;
+  strcopy(new->title, title);
+  strcopy(new->artist, artist);
+  new->next = n;
   return new;
 }
 
