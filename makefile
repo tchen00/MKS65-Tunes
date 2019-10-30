@@ -7,7 +7,7 @@ linked_list.o: linked_list.c linked_list.h
 library.o: library.c library.h
 	gcc -c library.c
 
-main.o: main.c library.h linked_list.h 
+main.o: main.c library.h linked_list.h
 	gcc -c main.c
 
 run:
