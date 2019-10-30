@@ -4,11 +4,12 @@
 #include "library.h"
 
 int main(){
+  struct node *n = NULL;
   printf("LINKED LIST TESTS\n");
   printf("====================================\n\n");
   // TESTING PRINT_LIST:
   printf("Testing print_list:\n");
-
+  print_list(n); // should return an empty list
 
   printf("====================================\n\n");
   // TESTING FIND_NODE:

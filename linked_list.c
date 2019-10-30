@@ -6,7 +6,7 @@ void print_list(struct song_node * n){
   struct song_node *current = n;
   printf("[ ");
   while (current != NULL){
-    printf("%d ", current -> i);
+    printf("%s: %s |", n -> artist, n -> name);
     current = current -> next;
   }
   printf("]\n");
