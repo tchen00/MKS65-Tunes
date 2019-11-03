@@ -41,7 +41,8 @@ int main(){
   printf("====================================\n\n");
   // TESTING FREE_LIST:
   printf("Testing free_list:\n");
-
+  free_list(n);
+  printf(n);
 
   printf("====================================\n\n");
   printf("MUSIC LIBRARY TESTS\n");
