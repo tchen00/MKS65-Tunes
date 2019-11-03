@@ -25,6 +25,28 @@ struct song_node * insert_front(struct song_node * node, char n[100], char a[100
   return new;
 }
 
+struct song_node * insert_order(struct song_node * node, char * a, char * n){
+  if (node == NULL){
+    node = insert_front(node, a, n);
+    return node;
+  }
+  struct song_node * current = node;
+  struct song_node * nex = current;
+  while (nex != NULL && strcmp(nex->artist,a) < 0){
+    current = nex;
+    nex = nex->next;
+  }
+  while (nex != NULL && strcmp(nex->artist,a) == 0 && strcmp(nex->name, n) < 0){
+    current = nex;
+    nex = nex->next;
+  }
+  if (nex == node){
+    return insert_front(node, a, n);
+  }
+  current->next = insert_front(nex, a, n);
+  return node;
+}
+
 struct song_node * find_random(struct song_node * n){
   int length = len(n);
   if (length > 0){
@@ -74,7 +96,7 @@ struct song_node * find_node(struct song_node * node, char * n, char * a) {
 }
 
 struct song_node * free_list(struct song_node * n){
-  struct song_node *current = n;
+  struct song_node * current = n;
   //struct song_node *holder = n;
   while ( n != NULL ){
     current = n -> next;
