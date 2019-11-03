@@ -4,13 +4,22 @@
 #include "library.h"
 
 int main(){
-  struct node *n = NULL;
+  struct song_node *n = NULL;
   printf("LINKED LIST TESTS\n");
   printf("====================================\n\n");
   // TESTING PRINT_LIST:
   printf("Testing print_list:\n");
   print_list(n); // should return an empty list
-
+  n = insert_front(n, "ac/dc", "thunderstruck");
+  /*
+  n = insert_front(n, "pearl jam", "alive");
+  n = insert_front(n, "pearl jam", "even flow");
+  n = insert_front(n, "pearl jam", "yellow ledbetter");
+  n = insert_front(n, "pink floyd", "time");
+  n = insert_front(n, "radiohead", "paranoid android");
+  n = insert_front(n, "radiohead", "street spirit (fade out)");
+  */
+  print_list(n);
   printf("====================================\n\n");
   // TESTING FIND_NODE:
   printf("Testing find_node:\n");

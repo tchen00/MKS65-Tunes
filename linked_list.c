@@ -4,18 +4,18 @@
 
 void print_list(struct song_node * n){
   struct song_node *current = n;
-  printf("[ ");
+  //printf("");
   while (current != NULL){
     printf("%s: %s |", n -> artist, n -> name);
     current = current -> next;
   }
-  printf("]\n");
+  printf("\n");
 }
 
-struct song_node * insert_front(struct song_node * n, char *artist, char *name){
+struct song_node * insert_front(struct song_node * n, char *name, char *artist){
   struct song_node *new = malloc(sizeof(struct song_node));
-  strcopy(new->title, title);
-  strcopy(new->artist, artist);
+  strcpy(new->name, name);
+  strcpy(new->artist, artist);
   new->next = n;
   return new;
 }
