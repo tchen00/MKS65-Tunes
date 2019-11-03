@@ -35,3 +35,23 @@ struct song_node * free_list(struct song_node * n){
   // TESTING PURPOSES -- printf("a");
   return current;
 }
+
+struct song_node * find_random(struct song_node * n){
+  int length = len(n);
+  if (length > 0){
+    int i = rand() % length;
+    for (; i > 0; i--){
+      n = n->next;
+    }
+  }
+  return n;
+}
+
+int len(struct song_node *n){
+  int i = 0;
+  while (n != NULL){
+    i++;
+    n = n->next;
+  }
+  return i;
+}
