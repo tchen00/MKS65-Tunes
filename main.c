@@ -21,7 +21,8 @@ int main(){
   printf("====================================\n\n");
   // TESTING FIND_NODE:
   printf("Testing find_node:\n");
-
+  struct song_node *return = find_node(n, "hello", "hello");
+  print_node(return);
 
   printf("====================================\n\n");
   // TESTING FIND_ARTIST:
