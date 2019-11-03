@@ -56,10 +56,10 @@ int len(struct song_node *n){
   return i;
 }
 
-struct song_node * find_artist(struct song_node * n, char * artist){
-  struct song_node * current = n;
+struct song_node * find_artist(struct song_node * node, char * a){
+  struct song_node * current = node;
   while (current != NULL){
-    if (strcmp(n->artist, artist) == 0){
+    if (strcmp(current->artist, a) == 0){
       break;
     }
     current = current->next;
@@ -67,14 +67,15 @@ struct song_node * find_artist(struct song_node * n, char * artist){
   return current;
 }
 
-struct song_node * find_node(struct song_node * n, char * name, char * artist) {
-  struct song_node * current = find_artist(n, artist);
+struct song_node * find_node(struct song_node * node, char * n, char * a) {
+  struct song_node *current = find_artist(node, a);
   if (current == NULL){
     printf("Song_node not found");
     return NULL;
   }
-  while (current != NULL && strcmp(current->artist, artist) == 0){
-    if (strcmp(current->name, name) == 0){
+  while (current != NULL && strcmp(current->artist, a) == 0){
+    if (strcmp(current->name, n) == 0){
+      printf("node found: ");
       return current;
     }
     current = current->next;

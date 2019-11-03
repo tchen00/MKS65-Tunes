@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
 #include "linked_list.h"
 #include "library.h"
 
 int main(){
+  srand(time(NULL));
   struct song_node *n = NULL;
   printf("LINKED LIST TESTS\n");
   printf("====================================\n\n");
@@ -21,7 +25,7 @@ int main(){
   printf("====================================\n\n");
   // TESTING FIND_NODE:
   printf("Testing find_node:\n");
-  struct song_node *output = find_node(n, "hello", "hello");
+  struct song_node * output = find_node(n, "hello", "hello");
   print_list(output);
   output = find_node(n, "ac/dc", "thunderstruck");
   print_list(output);
@@ -29,6 +33,8 @@ int main(){
   printf("====================================\n\n");
   // TESTING FIND_ARTIST:
   printf("Testing find_artist:\n");
+  struct node * found = find_artist(n, "thunderstruck");
+  print_list(found);
 
 
   printf("====================================\n\n");
