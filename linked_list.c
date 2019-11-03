@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "linked_list.h"
 
 void print_node(struct song_node *n){
@@ -22,18 +23,6 @@ struct song_node * insert_front(struct song_node * node, char n[100], char a[100
   strcpy(new->artist, a);
   new->next = node;
   return new;
-}
-
-struct song_node * free_list(struct song_node * n){
-  struct song_node *current = n;
-  //struct song_node *holder = n;
-  while ( n != NULL ){
-    current = n -> next;
-    free(n);
-    n = current;
-  }
-  // TESTING PURPOSES -- printf("a");
-  return current;
 }
 
 struct song_node * find_random(struct song_node * n){
@@ -82,4 +71,16 @@ struct song_node * find_node(struct song_node * node, char * n, char * a) {
   }
   printf("Song_node not found");
   return NULL;
+}
+
+struct song_node * free_list(struct song_node * n){
+  struct song_node *current = n;
+  //struct song_node *holder = n;
+  while ( n != NULL ){
+    current = n -> next;
+    free(n);
+    n = current;
+  }
+  // TESTING PURPOSES -- printf("a");
+  return current;
 }
