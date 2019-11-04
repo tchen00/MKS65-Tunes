@@ -79,7 +79,7 @@ int main(){
   }
   // TESTING PRINT_LIBRARY:
   printf("Testing print_library:\n");
-  //print_all(table);
+  print_lib(table);
 
   printf("====================================\n\n");
   // TESTING PRINT_LETTER:

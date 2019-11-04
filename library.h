@@ -1,4 +1,4 @@
-struct song_node * table[27];
+//struct song_node * table[27];
 
 void add_song(char *n, char *a);
 void print_letter(char a);
