@@ -51,13 +51,12 @@ int main(){
     printf("artist does not exist\n");
   }
 
-
   printf("====================================\n\n");
   // TESTING RANDOM:
   printf("Testing random:\n");
-  struct song_node * random = find_random(n);
   print_list(find_random(n));
-
+  print_list(find_random(n));
+  print_list(find_random(n));
   printf("====================================\n\n");
   // TESTING REMOVE:
   printf("Testing remove:\n");
