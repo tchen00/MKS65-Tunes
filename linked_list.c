@@ -95,6 +95,28 @@ struct song_node * find_node(struct song_node * node, char * n, char * a) {
   return NULL;
 }
 
+struct song_node * remove_node(struct song_node *node, char *n, char *a){
+  struct song_node *current = node;
+  struct song_node *nex = node->next;
+
+  if (strcmp(current->name, n) == 0 && strcmp(current->artist, a) == 0){
+    free(current);
+    return nex;
+  }
+
+  while (nex != NULL){
+    if (strcmp(nex->name, n) == 0 && strcmp(nex->artist, a) == 0) {
+      current->next = nex->next;
+      free(nex);
+      return node;
+    }
+    current = nex;
+    nex = nex->next;
+  }
+  return node;
+}
+
+
 struct song_node * free_list(struct song_node * n){
   struct song_node * current = n;
   //struct song_node *holder = n;
