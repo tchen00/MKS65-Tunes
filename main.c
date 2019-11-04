@@ -46,6 +46,10 @@ int main(){
   printf("Testing find_artist:\n");
   struct node * found = find_artist(n, "thunderstruck");
   print_list(found);
+  found = find_artist(n, "hello");
+  if (found == NULL){
+    printf("artist does not exist\n");
+  }
 
 
   printf("====================================\n\n");
