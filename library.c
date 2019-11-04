@@ -8,7 +8,9 @@
 
 void add_song(char *n, char *a) {
   int idx = a[0] - 'a';
-  if (idx < 0) idx = 26;
+  if (idx < 0) {
+     idx = 26;
+  }
   table[idx] = insert_order(table[idx], n, a);
 }
 
@@ -24,7 +26,7 @@ void print_letter(char a) {
   if (idx < 0) {
     idx = 26;
   }
-  printf("Print_letter for %c: ", a);
+  printf("letter for %c: ", a);
   print_list(table[idx]);
 }
 
@@ -32,12 +34,12 @@ void print_artist(char *a) {
   struct song_node *current = find_artist(a);
   struct song_node *nex = current;
   struct song_node *prev = NULL;
-  while(iterator != NULL) {
+  while(nex != NULL) {
     if(strcmp(current->artist,nex->artist) != 0) {
       current = remove_node(current, nex->name, nex->artist);
     }
-    prev = iterator;
-    iterator = iterator->next;
+    prev = nex;
+    nex = nex->next;
   }
   print_list(current);
 }
@@ -59,7 +61,7 @@ struct song_node * find(char *n, char *a) {
   return find_node(table[idx], n, a);
 }
 
-struct song_node * find_artist(char *a) {
+struct song_node * find_art(char *a) {
   int idx = a[0] - 'a';
   if(idx < 0) {
     idx = 26;

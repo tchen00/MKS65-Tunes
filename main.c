@@ -79,7 +79,7 @@ int main(){
   }
   // TESTING PRINT_LIBRARY:
   printf("Testing print_library:\n");
-  print_lib(table);
+  add_song("thunderstruck", "ac/dc");
 
   printf("====================================\n\n");
   // TESTING PRINT_LETTER:
