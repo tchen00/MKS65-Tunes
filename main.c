@@ -61,8 +61,10 @@ int main(){
   printf("====================================\n\n");
   // TESTING REMOVE:
   printf("Testing remove:\n");
-
-
+  print_list(n);
+  n = remove_node(n, "ac/dc", "thunderstruck");
+  n = remove_node(n, "radiohead", "paranoid android");
+  print_list(n);
   printf("====================================\n\n");
   // TESTING FREE_LIST:
   printf("Testing free_list:\n");
