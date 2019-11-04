@@ -72,9 +72,14 @@ int main(){
   printf("====================================\n\n");
   printf("MUSIC LIBRARY TESTS\n");
   printf("====================================\n\n");
+  struct song_node * table[27];
+  int i;
+  for (i = 0; i < 27; i++){
+    table[i] = NULL;
+  }
   // TESTING PRINT_LIBRARY:
   printf("Testing print_library:\n");
-
+  print_all(table);
 
   printf("====================================\n\n");
   // TESTING PRINT_LETTER:
