@@ -1,11 +1,13 @@
-struct song_node * table[27];
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
 
-void add_song(char *n, char *a);
-void print_letter(char a);
-void print_artist(char *a);
-void print_library();
-struct song_node * find(char *n, char *a);
-struct song_node * find_artist(char *a);
-void shuffle();
-void clear_library();
-void delete(char *n, char *a);
+#include "library.h"
+#include "linked_list.h"
+
+void add_song(char *n, char *a) {
+  int idx = a[0] - 'a';
+  if (idx < 0) idx = 26;
+  table[idx] = insert_order(table[idx], n, a);
+}
