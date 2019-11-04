@@ -118,13 +118,15 @@ struct song_node * remove_node(struct song_node *node, char *n, char *a){
 
 
 struct song_node * free_list(struct song_node * n){
-  struct song_node * current = n;
+  //struct song_node * current = n;
   //struct song_node *holder = n;
   while ( n != NULL ){
-    current = n -> next;
+    printf("freeing node: %s\n", n->artist);
+    struct song_node *temp = n;
+    n = n -> next;
     free(n);
-    n = current;
   }
+  printf("finally free\n");
   // TESTING PURPOSES -- printf("a");
-  return current;
+  return NULL;
 }
