@@ -52,7 +52,7 @@ struct song_node * find(char *n, char *a) {
   printf("looking for [%s: %s] \n", a,n);
   if(find_node(table[idx], n, a) != NULL) {
     printf("artist found! \n");
-    print_node(find_node(table[idx], n, a));
+    print_list(find_node(table[idx], n, a));
     printf("\n");
   }
   else {
@@ -61,21 +61,21 @@ struct song_node * find(char *n, char *a) {
   return find_node(table[idx], n, a);
 }
 
-struct song_node * find_art(char *a) {
+struct song_node * find_artist(char *a) {
   int idx = a[0] - 'a';
   if(idx < 0) {
     idx = 26;
   }
   printf("looking for [%s]\n", a);
-  if(find_node_by_artist(table[idx], a) != NULL) {
+  if(find_art(table[idx], a) != NULL) {
     printf("artist found! \n");
-    print_node(find_node_by_artist(table[idx], a));
+    print_node(find_art(table[idx], a));
     printf("\n");
   }
   else {
     printf("artist not found.\n");
   }
-  return find_node_by_artist(table[idx], a);
+  return find_art(table[idx], a);
 }
 
 
@@ -84,7 +84,7 @@ void shuffle(){
   int i = 3;
   while (i > 0){
     if (table[randy] != NULL){
-      print_node(random_node(table[randy]));
+      print_node(find_random(table[randy]));
       i--;
     }
     randy = rand() % 27;

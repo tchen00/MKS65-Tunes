@@ -44,9 +44,9 @@ int main(){
   printf("====================================\n\n");
   // TESTING FIND_ARTIST:
   printf("Testing find_artist:\n");
-  struct node * found = find_artist(n, "thunderstruck");
+  struct node * found = find_art(n, "thunderstruck");
   print_list(found);
-  found = find_artist(n, "hello");
+  found = find_art(n, "hello");
   if (found == NULL){
     printf("artist does not exist\n");
   }
@@ -72,11 +72,8 @@ int main(){
   printf("====================================\n\n");
   printf("MUSIC LIBRARY TESTS\n");
   printf("====================================\n\n");
-  struct song_node * table[27];
-  int i;
-  for (i = 0; i < 27; i++){
-    table[i] = NULL;
-  }
+  //struct song_node * table[27] = {NULL};
+
   // TESTING PRINT_LIBRARY:
   printf("Testing print_library:\n");
   add_song("thunderstruck", "ac/dc");

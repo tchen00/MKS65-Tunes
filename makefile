@@ -1,5 +1,5 @@
-all: linked_list.o main.o
-	gcc -o program linked_list.o main.o
+all: linked_list.o library.o main.o
+	gcc -o program linked_list.o library.o main.o
 
 linked_list.o: linked_list.c linked_list.h
 	gcc -c linked_list.c

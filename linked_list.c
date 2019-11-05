@@ -67,7 +67,7 @@ int len(struct song_node *n){
   return i;
 }
 
-struct song_node * find_artist(struct song_node * node, char * a){
+struct song_node * find_art(struct song_node * node, char * a){
   struct song_node * current = node;
   while (current != NULL){
     if (strcmp(current->artist, a) == 0){
