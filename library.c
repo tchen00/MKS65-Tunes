@@ -15,19 +15,20 @@ void add_song(char *n, char *a) {
 }
 
 void print_lib() {
-  int i;
-  for (i = 0; i < sizeof(table)/sizeof(table[0]) - 1; i++) {
-    print_list(table[i]);
+  for(int i = 0; i < sizeof(table)/sizeof(table[0]) - 1;i++) {
+    if (table[i] != NULL){
+      printf("%c list\n", (table[i]->artist)[0]);
+      print_list(table[i]);
+    }
   }
 }
 
-void print_letter(char a) {
-  int idx = a - 'a';
-  if (idx < 0) {
-    idx = 26;
+void print_letter(char c){
+  int i = c - 'a';
+  if (i < 0 || i >= 26){
+    i = 26;
   }
-  printf("letter for %c: ", a);
-  print_list(table[idx]);
+  print_list(table[i]);
 }
 
 void print_artist(char *a) {

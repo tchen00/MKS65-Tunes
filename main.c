@@ -76,49 +76,56 @@ int main(){
 
   // TESTING PRINT_LIBRARY:
   printf("Testing print_library:\n");
-  add_song("thunderstruck", "ac/dc");
-
+  add_song("ac/dc","thunderstruck");
+  add_song("alive","pearl jam");
+  add_song("even flow","pearl jam");
+  add_song("yellow ledbetter", "pearl jam");
+  add_song("time","pink floyd");
+  add_song("paranoid android","radiohead");
+  add_song("street spirit (fade out)","radiohead");
+  print_lib();
   printf("====================================\n\n");
   // TESTING PRINT_LETTER:
   printf("Testing print_letter:\n");
-
+  print_letter("a");
+  print_letter("p");
 
   printf("====================================\n\n");
   // TESTING FIND:
   printf("Testing find:\n");
-
+  find("ac/dc", "thunderstruck");
 
   printf("====================================\n\n");
   // TESTING FIND ARTIST:
   printf("Testing find_artist:\n");
-
+  find_artist("thunderstruck");
+  find_artist("pearl jam");
 
   printf("====================================\n\n");
   // TESTING REMOVE SONG:
-  printf("Testing remove_song:\n");
-
-
+  printf("Testing remove_song -- ac/dc: thunderstruck:\n");
+  delete("ac/dc", "thunderstruck");
+  print_lib();
+  // TESTING SHUFFLE:
   printf("====================================\n\n");
-  // TESTING CLEAR LIBRARY:
-  printf("Testing clear_library:\n");
-
-
-
-  // TESTING CLEAR LIBRARY:
-  printf("\nLibrary after clear:\n");
-  printf("====================================\n\n");
-  printf("Adding songs to empty library a list:\n");
+  printf("Testing shuffle:\n");
+  shuffle();
+  print_lib();
 
   // TESTING PRINT ARTIST:
   printf("====================================\n\n");
   printf("Testing print_artist:\n");
-
-
-  // TESTING SHUFFLE:
-  printf("====================================\n\n");
-  printf("Testing shuffle:\n");
+  print_artist("pearl jam");
 
   printf("====================================\n\n");
 
+  // TESTING CLEAR LIBRARY:
+  printf("Testing clear_library:\n");
+  clear();
+
+  // TESTING CLEAR LIBRARY:
+  printf("\nLibrary after clear:\n");
+  printf("====================================\n\n");
+  print_lib();
   return 0;
 }

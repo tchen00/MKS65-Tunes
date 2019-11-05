@@ -25,25 +25,25 @@ struct song_node * insert_front(struct song_node * node, char n[100], char a[100
   return new;
 }
 
-struct song_node * insert_order(struct song_node * node, char * a, char * n){
+struct song_node * insert_order(struct song_node * node, char * n, char * a){
   if (node == NULL){
-    node = insert_front(node, a, n);
+    node = insert_front(node, n, a);
     return node;
   }
   struct song_node * current = node;
   struct song_node * nex = current;
-  while (nex != NULL && strcmp(nex->artist,a) < 0){
+  while (nex != NULL && strcmp(nex->name,n) < 0){
     current = nex;
     nex = nex->next;
   }
-  while (nex != NULL && strcmp(nex->artist,a) == 0 && strcmp(nex->name, n) < 0){
+  while (nex != NULL && strcmp(nex->name,n) == 0 && strcmp(nex->artist, a) < 0){
     current = nex;
     nex = nex->next;
   }
   if (nex == node){
-    return insert_front(node, a, n);
+    return insert_front(node, n, a);
   }
-  current->next = insert_front(nex, a, n);
+  current->next = insert_front(nex, n, a);
   return node;
 }
 
